@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sadalearninghub.BuildInConnectionPooling.pojo.Product" table="PRODUCT">
+        <id name="productId" type="int">
+            <column name="PRODUCTID" length="8"/>
+            <generator class="assigned" />
+        </id>
+        <version name="version" column="version"></version>
+        <property name="productName" type="java.lang.String">
+            <column name="PRODUCTNAME" length="15"/>
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sadalearninghub.oneToManyApplicationUsingMap.model.Dealer" table="DEALER">
+        <id name="dealerId" type="int">
+            <column name="DEALERID" length="8"/>
+            <generator class="assigned" />
+        </id>
+        
+        <property name="dealerName" type="java.lang.String">
+            <column name="DEALERNAME" length="15"/>
+        </property>
+        
+        <map name="products" cascade="all">
+            <key column ="DEALERID" />
+            <map-key column="KEY" type="java.lang.String" length="5"/>
+            <one-to-many class="com.sadalearninghub.oneToManyApplicationUsingMap.model.Product"/>
+        </map>
+
+    </class>
+</hibernate-mapping>

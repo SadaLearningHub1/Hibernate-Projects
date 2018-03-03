@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory>
+  <!-- JNDI properties -->
+  <property name="hibernate.connection.datasource">jdbc/OracleResource</property>
+  <property name="hibernate.jndi.class">com.sun.enterprise.naming.impl.SerialInitContextFactory</property>
+  <property name="hibernate.jndi.url">iiop://localhost:4848</property>
+  
+  <!-- hibernate Properties -->
+  <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+  <property name="hibernate.hbm2ddl.auto">update</property>
+  <property name="hibernate.show_sql">true</property>
+  
+  <!-- mapping recources -->
+  <mapping resource="Product.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>

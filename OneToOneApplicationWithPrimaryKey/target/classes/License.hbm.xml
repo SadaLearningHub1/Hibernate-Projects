@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.License" table="LICENSE">
+        <id name="licenseId" type="int">
+            <column name="LICENSEID" length="5"/>
+            <generator class="foreign">
+            	<param name="property">person</param>
+            </generator>
+        </id>
+        <property name="issuedDate" type="java.util.Date">
+            <column name="ISSUEDDATE" />
+        </property>
+        <property name="expireDate" type="java.util.Date">
+            <column name="EXPIREDATE" />
+        </property>
+        
+        <one-to-one name="person" class="com.sada.Model.Person" cascade="all"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Employee" table="EMPLOYEE">
+        <id name="employeeId" type="int">
+            <column name="EMPLOYEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeName" type="java.lang.String">
+            <column name="EMPLOYEENAME" />
+        </property>
+        <property name="employeeSal" type="int">
+            <column name="EMPLOYEESAL" />
+        </property>
+        <property name="deptNumber" type="int">
+            <column name="DEPTNUMBER" />
+        </property>
+    </class>
+    
+    <!-- Named SQL Query Configuration -->
+    <sql-query name="s1" callable="true">
+    	<return class="com.sada.Model.Employee" alias="e"/>
+    	{?=call employees_fun(?)}
+	</sql-query>
+    
+</hibernate-mapping>

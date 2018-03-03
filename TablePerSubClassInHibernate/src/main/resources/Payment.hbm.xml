@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sada.Model.Payment" table="PAYMENT">
+		<id name="paymentId" type="int">
+			<column name="PAYMENTID" length="8"/>
+			<generator class="assigned" />
+		</id>
+		<property name="amount" type="double">
+			<column name="AMOUNT" length="8"/>
+		</property>
+		<property name="paymentDate" type="java.util.Date">
+			<column name="PAYMENTDATE" />
+		</property>
+		
+		<joined-subclass name="com.sada.Model.CreditCardPayment">
+			<key column="PID"/>
+			<property name="cardType" column="CCTYPE" length="10"></property>
+		</joined-subclass>
+		
+		<joined-subclass name="com.sada.Model.ChequePayment">
+			<key column="PID"/>
+			<property name="chequeType" column="CHTYPE" length="10"></property>
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

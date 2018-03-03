@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Employee" table="EMPLOYEE">
+        <id name="employeeId" type="int">
+            <column name="EMPLOYEEID" length="8"/>
+            <generator class="assigned" />
+        </id>
+        <property name="employeeName" type="java.lang.String">
+            <column name="EMPLOYEENAME" length="15"/>
+        </property>
+        <property name="employeeSal" type="int">
+            <column name="EMPLOYEESAL" length="8" />
+        </property>
+        <property name="deptNumber" type="int">
+            <column name="DEPTNUMBER" length="8" />
+        </property>
+    </class>
+</hibernate-mapping>

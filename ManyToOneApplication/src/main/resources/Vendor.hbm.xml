@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Vendor" table="VENDOR">
+        <id name="vendorId" type="int">
+            <column name="VENDORID" length="8"/>
+            <generator class="assigned" />
+        </id>
+        <property name="vendorName" type="java.lang.String">
+            <column name="VENDORNAME" length="15"/>
+        </property>
+    </class>
+</hibernate-mapping>

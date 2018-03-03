@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sada.Model.Book" table="BOOK">
+		<composite-id>
+			<key-property name="bookId" column="BOOKID" length="10"></key-property>
+			<key-property name="isbn" column="ISBN" length="10"></key-property>
+		</composite-id>
+		<property name="bookName" type="java.lang.String">
+			<column name="BOOKNAME" length="20"/>
+		</property>
+		<property name="price" type="double">
+			<column name="PRICE" length="20"/>
+		</property>
+	</class>
+</hibernate-mapping>

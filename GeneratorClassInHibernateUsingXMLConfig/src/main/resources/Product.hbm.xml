@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sadalearninghub.GeneratorClassInHibernateUsingXMLConfig.pojo.Product" table="PRODUCT">
+		<id name="productId" column="PRODUCTID">
+			<generator class="increment"/>
+		</id>
+		<property name="productName" column="PRODUCTNAME"></property>
+		<property name="price" column="PRICE"></property>
+	</class>
+</hibernate-mapping>

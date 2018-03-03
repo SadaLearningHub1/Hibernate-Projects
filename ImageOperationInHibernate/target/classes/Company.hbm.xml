@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Company" table="COMPANY">
+        <id name="companyId" type="int" length="5">
+            <column name="COMPANYID" />
+            <generator class="assigned" />
+        </id>
+        <property name="image" type="java.sql.Blob">
+            <column name="IMAGE" />
+        </property>
+    </class>
+</hibernate-mapping>

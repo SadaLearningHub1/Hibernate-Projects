@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Person" table="PERSON">
+        <id name="personId" type="int">
+            <column name="PERSONID" length="5"/>
+            <generator class="assigned" />
+        </id>
+        <property name="personName" type="java.lang.String">
+            <column name="PERSONNAME" length="15"/>
+        </property>
+    </class>
+</hibernate-mapping>

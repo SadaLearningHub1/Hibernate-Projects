@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Student" table="STUDENTS">
+        <id name="studentId" type="int">
+            <column name="STUDENTID" length="5" />
+            <generator class="assigned" />
+        </id>
+        <property name="studentName" type="java.lang.String">
+            <column name="STUDENTNAME" length="10" />
+        </property>
+        <component name="address">
+        	<property name="hno" length="10"/>
+        	<property name="street" length="10"/>
+        	<property name="city" length="10"/>
+        </component>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.sada.Model.Customer" table="CUSTOMER">
+        <id name="customerId" type="java.lang.String">
+            <column name="CUSTOMERID" length="8" />
+            <generator class="com.sada.IdGenertor.MyIdGenerator" />
+        </id>
+        <property name="customerName" type="java.lang.String" length="10">
+            <column name="CUSTOMERNAME" length="10"/>
+        </property>
+        <property name="customerAddress" type="java.lang.String" length="10">
+            <column name="CUSTOMERADDRESS" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>
